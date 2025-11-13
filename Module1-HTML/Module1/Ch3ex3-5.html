@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3 Exercise 3.5</title>
+</head>
+<body>
+    <h1>HTML5 Form Elements Examples</h1>
+
+    <div>
+        <h2>Part (a): Meter</h2>
+        Average cafeteria rating: <meter min="1" max="10" value="7">7 out of 10</meter> 7 out of 10
+    </div>
+
+    <div>
+        <h2>Part (b): Details</h2>
+        <details>
+            <summary>Survey Results</summary>
+            <p>Students were asked to rate their overall satisfaction with the food quality, presentation, and service. 500 students in grades 1-5 were surveyed. The average rating was 7 out of 10.</p>
+        </details>
+    </div>
+
+    <div>
+        <h2>Part (c): Text Input w/ Autofocus</h2>
+        <form>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" autofocus>
+        </form>
+    </div>
+
+    <div>
+        <h2>Part (d): Text Input w/ Placeholder</h2>
+        <form>
+            <input type="text" id="firstNamePlaceholder" name="firstName" placeholder="John Doe" autofocus>
+        </form>
+    </div>
+
+    <div>
+        <h2>Part (e): Datalist for 5 States</h2>
+        <form>
+            <label for="state">Select a State:</label>
+            <input type="text" id="state" name="state" list="states">
+            <datalist id="states">
+                <option value="California">
+                <option value="Texas">
+                <option value="Florida">
+                <option value="New York">
+                <option value="Pennsylvania">
+            </datalist>
+        </form>
+    </div>
+
+    <div>
+        <h2>Part (f): Range Element</h2>
+        <form>
+            <label for="rangeValue">Select a number (1-100):</label><br>
+            <input type="range" id="rangeValue" name="rangeValue" min="1" max="100" value="50">
+        </form>
+    </div>
+
+    <div>
+        <h2>Part (g): Form with Autocomplete Disabled</h2>
+        <form autocomplete="off">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </form>
+    </div>
+
+    <div>
+        <h2>Part (h): Paragraph Element W/ Mark Highlighting</h2>
+        <p>Students were asked to rate the food in the cafeteria on a scale of 1 to 10. <mark>The average result was 7</mark></p>
+    </div>
+
+</body>
+</html>

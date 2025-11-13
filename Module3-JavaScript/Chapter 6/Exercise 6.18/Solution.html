@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        let num1 = window.prompt("Enter the first number:");
+        let num2 = window.prompt("Enter the second number:");
+        let num3 = window.prompt("Enter the third number:");
+
+        function average(n1, n2, n3) 
+        {
+            const unRoundedAvg = (Number(n1) + Number(n2) + Number(n3)) / 3;
+            return unRoundedAvg.toFixed(2);
+        }
+
+        function sum(n1, n2, n3) 
+        {
+            return Number(n1) + Number(n2) + Number(n3);
+        }
+
+        function product(n1, n2, n3) 
+        {
+            return n1 * n2 * n3;
+        }
+
+        function smallest(n1, n2, n3) 
+        {
+            return Math.min(n1, n2, n3);
+        }
+
+        function largest(n1, n2, n3) 
+        {
+            return Math.max(n1, n2, n3);
+        }
+
+
+        alert("You entered: " + num1 + ", " + num2 + ", and " + num3 + "\n" 
+        + "Average: " + average(num1, num2, num3) + "\n" 
+        + "Sum: " + sum(num1, num2, num3) + "\n" 
+        + "Product: " + product(num1, num2, num3) + "\n" 
+        + "Smallest: " + smallest(num1, num2, num3) + "\n" 
+        + "Largest: " + largest(num1, num2, num3));
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

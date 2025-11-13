@@ -1,0 +1,13 @@
+1.1 Fill in the blanks in each of the following:
+
+1. The company that popularized personal computing was APPLE.
+2. Computers process data under the control of sets of instructions called computer PROGRAMS.           
+3. ASSEMBLY is a type of computer language that uses Englishlike abbreviations for machine-language instructions.
+4. HIGH LEVEL languages are most convenient to the programmer for writing programs quickly and easily.
+5. The only language a computer can directly understand is that computer’s MACHINE CODE.          
+6. The programs that translate high-level language programs into machine language are called COMPILERS.          
+7. TAGGING, or labeling content, is another key part of the collaborative theme of Web 2.0.
+8. With OPEN SOURCE development, individuals and companies contribute their efforts in developing, maintaining and evolving software in exchange for the right to use that software for their own purposes, typically at no charge.
+9. The ARPANET was the predecessor to the Internet.
+10. The information-carrying capacity of a communications medium like the Internet is called ITS BANDWIDTH.          
+11. The acronym TCP/IP stands for TRANSMISSION CONTROL PROTOCOL / INTERNET PROTOCOL.          

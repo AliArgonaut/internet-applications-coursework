@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        const firstNumber = window.prompt("Enter the first number:");
+        const secondNumber = window.prompt("Enter the second number:");
+
+        function multiply(num1, num2) 
+        {
+            return num1 * num2;
+        }
+
+        function divide(num1, num2) 
+        {
+            if (num2 === 0) 
+            {
+                return "Error: Division by zero is not allowed.";
+            } 
+            else 
+            {
+            return num1 / num2;
+            }
+        }
+
+        function subtract(num1, num2) 
+        {
+            return num1 - num2;
+        }
+
+        function add(num1, num2) 
+        {
+            return Number(num1) + Number(num2);
+        }
+
+        alert("You entered: " + firstNumber + " and " + secondNumber + "\n" 
+        + "Multiplication: " + multiply(firstNumber, secondNumber) + "\n" 
+        + "Division: " + divide(firstNumber, secondNumber) + "\n" 
+        + "Subtraction: " + subtract(firstNumber, secondNumber) + "\n" 
+        + "Addition: " + add(firstNumber, secondNumber));
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

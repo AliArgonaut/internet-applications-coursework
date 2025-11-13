@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Salesperson Earnings Calculator</h1>
+    <div id="Salesperson-Earnings-Container">Earnings: </div>    
+</body>
+
+
+
+<script type="text/javascript">
+
+    let soldItemsPriceArray = [];
+    let comissionRate = 0.09;
+    let weeklyBaseSalary = 200;
+    let sentinelValue = "";
+    let isRunning = true;
+
+    const salesPersonName = window.prompt("Enter the salesperson's name:");
+    while (isRunning) 
+    {
+        let input = window.prompt("Enter the total price of sold items for the salesperson or type END to finish:");
+        switch (true) {
+            case input === "END":
+                const totalSales = calculateTotalSales(soldItemsPriceArray);
+                const earnings = calculateEarnings(totalSales, comissionRate, weeklyBaseSalary);
+                displayEarnings(salesPersonName, earnings);
+                isRunning = false;
+                break;
+
+        case !isNaN(parseFloat(input)):
+            const price = parseFloat(input);
+            soldItemsPriceArray.push(price);
+            break;
+
+        default:
+            alert("You've entered something that isn't a number. Please try again or type 'END'.");
+            break;
+        }
+    }
+
+    function calculateTotalSales(soldItemsPriceArray) 
+    {
+        let totalSales = 0;
+        for (let i = 0; i < soldItemsPriceArray.length; i++) 
+        {
+            totalSales += soldItemsPriceArray[i];
+        }
+        return totalSales;
+    }
+
+    function calculateEarnings(totalSales, comissionRate, weeklyBaseSalary) 
+    {
+        return (totalSales * comissionRate) + weeklyBaseSalary;
+    }
+
+    function displayEarnings(salesPersonName, earnings) 
+    {
+        let earningsContainer = document.getElementById("Salesperson-Earnings-Container");
+        earningsContainer.innerText = "Earnings for " + salesPersonName + ": $" + earnings.toFixed(2);
+    }
+
+   
+</script>
+
+</html>

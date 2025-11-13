@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="Message-Container"></div>
+    <div id="Credit-Check-Limit-Container"></div>
+</body>
+
+    <script type="text/javascript">
+
+        const accountNumber = window.prompt("Enter your account number:");
+        const beginningBalance = parseFloat(window.prompt("Enter the start of your balance this month:"));
+        const totalCharges = parseFloat(window.prompt("Enter the total of all charges this month:"));
+        const totalCredits = parseFloat(window.prompt("Enter the total of credits this month:"));
+        const creditLimit = parseFloat(window.prompt("Enter your allowed credit limit:"));
+        
+        function calculateNewBalance(beginningBalance, totalCharges, totalCredits) 
+        {
+            return beginningBalance + totalCharges - totalCredits;
+        }
+
+        function writeNewBalance(accountNumber, newBalance) 
+        {
+            let messageContainer = document.getElementById("Message-Container");
+            let newBalanceMessage = "Account Number: " + accountNumber + "\n" + "New Balance: $" + newBalance.toFixed(2) + "\n";
+            messageContainer.innerText = newBalanceMessage;
+        }
+
+        function checkCreditLimit(accountNumber, newBalance, creditLimit) 
+        {
+            let checkLimitContainer = document.getElementById("Credit-Check-Limit-Container");
+            if (newBalance > creditLimit) 
+            {
+                let creditLimitMessage = "Credit Limit Exceeded for Account: " + accountNumber + "\n";
+                checkLimitContainer.innerText += creditLimitMessage;
+            }
+        }
+
+        calculateNewBalance(beginningBalance, totalCharges, totalCredits);
+        let newBalance = calculateNewBalance(beginningBalance, totalCharges, totalCredits);
+        writeNewBalance(accountNumber, newBalance);
+        checkCreditLimit(accountNumber, newBalance, creditLimit);
+    </script>
+
+</html>
