@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Circle Area Calculator</title>
+</head>
+<body>
+
+<h2>Circle Area Calculator</h2>
+
+<form id="circleForm">
+    <label for="radius">Enter radius:</label>
+    <input type="number" id="radius" name="radius" step="any" required>
+    <button type="submit">submit</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+function circleArea(radius)
+{
+    return Math.PI * radius * radius;
+}
+
+window.addEventListener('load', function() 
+{
+    var form = document.getElementById('circleForm');
+    var resultParagraph = document.getElementById('result');
+
+    form.addEventListener('submit', function(event) 
+    {
+        event.preventDefault(); 
+
+        var radius = parseFloat(document.getElementById('radius').value);
+        if (isNaN(radius) || radius < 0) 
+        {
+            resultParagraph.textContent = "Please enter a valid positive number for the radius.";
+            return;
+        }
+
+        var area = circleArea(radius);
+        resultParagraph.textContent = "AREA: " + area.toFixed(2);
+    });
+});
+</script>
+
+</body>
+</html>

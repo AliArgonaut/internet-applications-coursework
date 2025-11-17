@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>FINDING SMALLEST NON NEGATIVE INTEGER</h1>
+    <h2 id="array"></h2>
+    <h2 id="output"></h2>
+</body>
+
+<script>
+    let smallest = Infinity;
+    let array = [];
+
+    while (true) 
+    {
+      let input = prompt("Enter a nonnegative integer (-1 to stop):");
+      let value = parseInt(input);
+
+      if (value === -1) 
+      {
+        break;
+      }
+
+      if (isNaN(value) || value < 0) 
+      {
+        alert("enter a valid nonnegative integer.");
+        continue;
+      } 
+      else 
+      {
+        array.push(value);
+      }
+
+      if (value < smallest) 
+      {
+        smallest = value;
+      }
+    }
+
+    if (smallest === Infinity) 
+    {
+      document.getElementById("output").textContent = "No numbers were entered.";
+    } 
+    else 
+    {
+        document.getElementById("array").textContent = `The numbers entered are: ${array.join(', ')}`;
+        document.getElementById("output").textContent = `The smallest number is: ${smallest}`;
+    }
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Temperature Converter</h1>
+    <form>
+        <label for="Temperature">Temperature</label>
+        <input type="number" id="Temperature" placeholder="temperature">
+        <select id="scale">
+            <option value="celsiusToFahrenheit">Celsius to Fahrenheit</option>
+            <option value="fahrenheitToCelsius">Fahrenheit to Celsius</option>
+        </select>
+        <button type="submit">Convert</button>
+    
+    </form>
+
+    <div id="result"></div>
+    
+</body>
+<script>
+function celsiusToFahrenheit(celsius) 
+{
+    return (celsius * 9/5) + 32;
+}
+function fahrenheitToCelsius(fahrenheit) 
+{
+    return (fahrenheit - 32) * 5/9;
+}
+
+window.addEventListener('load', function() 
+{
+    var tempInput = document.getElementById('Temperature');
+    var scaleSelect = document.getElementById('scale');
+    var resultDiv = document.getElementById('result');
+    var form = document.querySelector('form');
+
+    form.addEventListener('submit', function(event)
+     {
+        event.preventDefault();
+
+        var temp = parseFloat(tempInput.value);
+        if (isNaN(temp))
+         {
+            resultDiv.textContent = "Please enter a valid number.";
+            return;
+        }
+
+        var scale = scaleSelect.value;
+        var converted;
+        if (scale === 'celsiusToFahrenheit')
+         {
+            converted = celsiusToFahrenheit(temp);
+            resultDiv.textContent = temp + "°C = " + converted.toFixed(2) + "°F";
+        } 
+        else
+        {
+            converted = fahrenheitToCelsius(temp);
+            resultDiv.textContent = temp + "°F = " + converted.toFixed(2) + "°C";
+        }
+    });
+});
+</script>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        table {
+            width: 300px;
+            border-collapse: collapse;
+            background-color: lightblue;
+        }
+        table, td, th {
+            border: 1px solid black;
+            padding: 4px;
+        }
+        th {
+            text-align: left;
+            color: white;
+            background-color: darkblue;
+        }
+        tr.oddrow {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+<script>
+    var principal = 1000.00;
+    var rates = [0.05, 0.06, 0.07, 0.08, 0.09, 0.10];
+
+    document.writeln("<table border='1'>");
+    document.writeln("<caption><b>Calculating Compound Interest</b></caption>");
+
+=    document.writeln("<thead><tr><th>Year</th>");
+    for (var i = 0; i < rates.length; i++) {
+        document.writeln("<th>" + (rates[i] * 100).toFixed(0) + "%</th>");
+    }
+    document.writeln("</tr></thead><tbody>");
+
+    for (var year = 1; year <= 10; year++) {
+        document.writeln(year % 2 == 1 ? "<tr class='oddrow'>" : "<tr>");
+        document.writeln("<td>" + year + "</td>");
+        
+        for (var i = 0; i < rates.length; i++) {
+            var amount = principal * Math.pow(1.0 + rates[i], year);
+            document.writeln("<td>$" + amount.toFixed(2) + "</td>");
+        }
+
+        document.writeln("</tr>");
+    }
+
+    document.writeln("</tbody></table>");
+</script>
+</html>
