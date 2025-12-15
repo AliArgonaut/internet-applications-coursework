@@ -1,0 +1,18 @@
+
+td {
+  width: 10px;
+  height: 10px;
+ 
+}
+#clearBtn {
+  border: 2px solid black
+}
+.blue { 
+  background-color: blue; 
+}
+.red { 
+background-color: red; 
+}
+.white { 
+background-color: white; 
+}

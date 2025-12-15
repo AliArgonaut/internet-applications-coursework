@@ -1,0 +1,44 @@
+﻿@page
+@model _23._3.Pages.IndexModel
+<h1>Welcome!</h1>
+<form method="post">
+    <label>BackColor:</label>
+    <select name="BackColor" onchange="this.form.submit()">
+        @foreach (var color in Model.Colors)
+        {
+        <option value="@color" selected="@(color == Model.BackColor)">@color</option>
+        }
+    </select>
+    <label>ForeColor:</label>
+    <select name="ForeColor" onchange="this.form.submit()">
+        @foreach (var color in Model.Colors)
+        {
+        <option value="@color" selected="@(color == Model.ForeColor)">@color</option>
+        }
+    </select>
+    <label>Font Size:</label>
+    <select name="FontSize" onchange="this.form.submit()">
+        @foreach (var size in Model.FontSizes)
+        {
+        <option value="@size" selected="@(size == Model.FontSize)">@size</option>
+        }
+    </select>
+</form>
+<div id="uptime-block"
+    style="background-color:@Model.BackColor; color:@Model.ForeColor; font-size:@Model.FontSize; padding:20px; border-radius:5px; width:200px;">
+    <strong>Server Uptime:</strong>
+    <p id="uptime">@Model.Uptime</p>
+</div>
+<script>
+    let startTime = new Date('@Model.ServerStartTime.ToString("o")');
+    function updateUptime() {
+        let now = new Date();
+        let diff = now - startTime;
+        let seconds = Math.floor(diff / 1000) % 60;
+        let minutes = Math.floor(diff / (1000 * 60)) % 60;
+        let hours = Math.floor(diff / (1000 * 60 * 60));
+        document.getElementById('uptime').textContent = `${hours}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(updateUptime, 1000);
+    updateUptime();
+</script>

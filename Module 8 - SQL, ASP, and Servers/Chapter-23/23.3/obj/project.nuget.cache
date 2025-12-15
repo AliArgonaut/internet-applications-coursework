@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "0uZvgFlIWCk=",
+  "success": true,
+  "projectFilePath": "/home/ali/Desktop/learning/homework/Intro To Web Applications Fall 2 2025/Web-Applications/Module 8 - SQL, ASP, and Servers/Chapter-23/23.3/23.3.csproj",
+  "expectedPackageFiles": [
+    "/home/ali/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.9/microsoft.aspnetcore.app.ref.9.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
